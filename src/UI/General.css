@@ -1,0 +1,17 @@
+.general {
+    position: absolute;
+    /* o fixed si quieres que esté siempre en pantalla */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    /* más alto que el canvas */
+    pointer-events: none;
+    /* si NO quieres que la UI bloquee el canvas (ej. overlays) */
+}
+
+.general * {
+    pointer-events: auto;
+    /* permite clics en los elementos dentro de la UI */
+}
