@@ -1,55 +1,20 @@
-# React + TypeScript + Vite
+lenguaje: typescript
+framework: react
+Librerias : Three.js , React Three Fiber, Drei
+Store Reactivo: Zustand
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<img width="1552" alt="Screenshot 2025-03-25 at 14 31 38" src="https://github.com/user-attachments/assets/a3078475-9de2-4335-b282-955e14579a11" />
 
-Currently, two official plugins are available:
+Proyecto creado con vite ( ts ) 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+How to install
+yarn
+yarn run dev
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
-# practica-kaizen
+La comunicación entre los elementos 3D y la UI se realiza a través de Zustand, una store global reactiva.
+El HUD actualiza el estado global (color, visibilidad, velocidad...).
+Los componentes 3D escuchan los cambios en tiempo real desde la store del zustand
+y son acrualizados, se pueden tener acceso desde cualquier archivo importando la store reactiva
+entonces eso nos garantiza un codigo mas limpio y la facilidad de poder organizar los componentes
+y tener un arquitectura mas ordenada, y podemos separar los componentes por su logica sin tener
+que mezclar la logica.
