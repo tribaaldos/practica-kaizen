@@ -7,7 +7,7 @@ import { useCylinderStore } from '../store/useCylinderStore'
 export default function Cylinder() {
     const meshRef = useRef<THREE.Mesh>(null)
     const [isFlipping, setIsFlipping] = useState(false)
-    const [rotationProgress, setRotationProgress] = useState(0)
+    const [, setRotationProgress] = useState(0)
     const { position, rotation, setRotation, setPosition } = useCylinderStore();
     useFrame((_, delta) => {
         if (isFlipping && meshRef.current) {
@@ -21,7 +21,7 @@ export default function Cylinder() {
           // 2. Rotar en X para hacer el backflip
           const [rx, ry, rz] = rotation
           setRotation([rx + step, ry, rz])
-      
+            
           // 3. Controlar la duración del flip
           setRotationProgress((prev) => {
             const updated = prev + step

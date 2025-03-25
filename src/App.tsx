@@ -1,9 +1,7 @@
 
-import { Canvas, useFrame, useThree } from '@react-three/fiber'
+import { Canvas } from '@react-three/fiber'
 import './App.css'
-import { Environment, Grid, MeshReflectorMaterial, MeshRefractionMaterial, OrbitControls, Sky, useTexture } from '@react-three/drei'
-import { useEffect, useRef } from 'react';
-import * as THREE from 'three';
+import { MeshReflectorMaterial, OrbitControls, Sky } from '@react-three/drei'
 import Sphere from './components/Sphere';
 import UI from './UI/General';
 import Cube from './components/Cube';
