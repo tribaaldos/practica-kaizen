@@ -24,13 +24,6 @@ Desarrollar una aplicación web con:
 - Un **HUD** (panel de control) integrado que permite modificar elementos de la escena en tiempo real.
 
 ---
-
-## ⚙️ Instalación y ejecución
-
-yarn
-yarn run dev
-
-
 La comunicación entre los elementos 3D y la UI se realiza a través de Zustand, una store global reactiva.
 El HUD actualiza el estado global (color, visibilidad, velocidad...).
 Los componentes 3D escuchan los cambios en tiempo real desde la store del zustand
@@ -38,4 +31,11 @@ y son acrualizados, se pueden tener acceso desde cualquier archivo importando la
 entonces eso nos garantiza un codigo mas limpio y la facilidad de poder organizar los componentes
 y tener un arquitectura mas ordenada, y podemos separar los componentes por su logica sin tener
 que mezclar la logica.
+
+## ⚙️ Instalación y ejecución
+
+yarn
+yarn run dev
+
+
 ```bash
